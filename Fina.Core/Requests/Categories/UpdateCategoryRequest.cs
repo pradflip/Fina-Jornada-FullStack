@@ -1,0 +1,16 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Fina.Core.Requests.Categories
+{
+    public class UpdateCategoryRequest : Request
+    {
+        public long Id { get; set; }
+
+        [Required(ErrorMessage = "Título é obrigatório.")]
+        [MaxLength(80, ErrorMessage = "Título deve conter até 80 dígitos.")]
+        public string Title { get; set; } = string.Empty;
+
+        [Required(ErrorMessage = "Descrição é obrigatória.")]
+        public string Description { get; set; } = string.Empty;
+    }
+}
